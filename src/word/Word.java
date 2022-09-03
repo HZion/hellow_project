@@ -1,3 +1,5 @@
+package word;
+
 public class Word {
     public int getLevel() {
         return level;
@@ -30,7 +32,7 @@ public class Word {
         for(int i = 0; i< level ; i++)
             printLevel += "*";
 
-        String str = String.format("-3s",printLevel) + String.format("%10s",word) + "   " + meaning;
+        String str = String.format("%-3s",printLevel) + String.format("%10s",word) + "   " + meaning;
         return str;
     }
 

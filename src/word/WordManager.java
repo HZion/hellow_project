@@ -1,17 +1,27 @@
+package word;
+
 import java.util.Scanner;
 
 public class WordManager {
+
     Scanner s = new Scanner(System.in);
     CRUD crud;
-    public void startVoca(){
+    WordManager(){
+        crud = new CRUD(s);
+    }
+    public void start(){
         while(true){
             int menu = printManu();
+
             if(menu == 0) break;
-            else if(menu == 1){
+
+            if(menu == 1){
                 //list
+                crud.viewList();
             }
             else if (menu == 4){
                 // add
+                crud.addWord();
             }
         }
 
