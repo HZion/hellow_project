@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class WordManager {
     Scanner s = new Scanner(System.in);
-
+    CRUD crud;
     public void startVoca(){
         while(true){
             int menu = printManu();

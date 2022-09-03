@@ -1,16 +1,25 @@
 public class Word {
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     /*
     * 1.멤버 변수 설정/ 접근한정자 pubilc 같은거
     * 2.geter, setter
     * 3.생성자
     * 4. 멤버 매소드
     * */
-
+    private int level;
     private String meaning;
     private String word;
     public Word(){};
 
-    public Word(String meaning, String word) {
+    public Word(int level, String word, String meaning) {
+        this.level = level;
         this.meaning = meaning;
         this.word = word;
     }
