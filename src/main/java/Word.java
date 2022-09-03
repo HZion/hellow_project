@@ -26,7 +26,12 @@ public class Word {
 
     @Override
     public String toString() {
-        return super.toString();
+        String printLevel = "";
+        for(int i = 0; i< level ; i++)
+            printLevel += "*";
+
+        String str = String.format("-3s",printLevel) + String.format("%10s",word) + "   " + meaning;
+        return str;
     }
 
     public String getMeaning() {
