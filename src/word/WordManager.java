@@ -13,7 +13,10 @@ public class WordManager {
         while(true){
             int menu = printManu();
 
-            if(menu == 0) break;
+            if(menu == 0) {
+                System.out.println("영단어 프로그램 종료");
+                break;
+            }
 
             if(menu == 1){
                 //list
