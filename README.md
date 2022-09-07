@@ -1,4 +1,4 @@
-# hellow_project
+# project javaCRUD
 
 <br>
 #1 단어 추가 
