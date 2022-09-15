@@ -1,9 +1,10 @@
 package word;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class CRUD implements ICRUDinterface {
-
+    final String fname = "test.txt";
     Scanner s;
     ArrayList<Word>list;
     CRUD(Scanner s){
@@ -42,5 +43,31 @@ public class CRUD implements ICRUDinterface {
     public void selectOne(int id){
 
     };
+
+    public void readFile() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(fname));
+            String line;
+            int count =0;
+            while(true){
+                line = br.readLine();
+                if(line == null) break;
+                // 다 읽어 오면 break;
+
+                String data[]= line.split("\\|");
+                //읽어온 한줄을 | 기준으로 구분 data[0] = 레벨, data[1] = 단어, data[2]= 의미가 들어갈것임
+                int level = Integer.parseInt(data[0]);
+                String word = data[1];
+                String meaning = data[0];
+                list.add(new Word(0,level, word, meaning));
+                count++
+
+             }
+            System.out.println("=> " + count+ "개 단어 로딩 완료" );
+            br.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }

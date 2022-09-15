@@ -12,6 +12,7 @@ public class WordManager {
     public void start(){
         while(true){
             int menu = printManu();
+            crud.readFile();
 
             if(menu == 0) {
                 System.out.println("영단어 프로그램 종료");

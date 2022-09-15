@@ -18,9 +18,11 @@ public class Word {
     private int level;
     private String meaning;
     private String word;
+    private int id;
     public Word(){};
 
-    public Word(int level, String word, String meaning) {
+    public Word(int id, int level, String word, String meaning) {
+        this.id = id;
         this.level = level;
         this.meaning = meaning;
         this.word = word;
