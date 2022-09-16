@@ -10,9 +10,11 @@ public class WordManager {
         crud = new CRUD(s);
     }
     public void start(){
+        crud.loadFile();
+
         while(true){
             int menu = printManu();
-            crud.readFile();
+
 
             if(menu == 0) {
                 System.out.println("영단어 프로그램 종료");
@@ -22,10 +24,24 @@ public class WordManager {
             if(menu == 1){
                 //list
                 crud.viewList();
+            }else if(menu == 2){
+
+            }
+            else if(menu ==3 ){
+
             }
             else if (menu == 4){
                 // add
                 crud.addWord();
+            }
+            else if(menu == 5){
+                crud.updateWord();
+            }
+            else if(menu == 6){
+
+            }
+            else if(menu == 7){
+                crud.saveFile();
             }
         }
 

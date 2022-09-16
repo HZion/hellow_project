@@ -1,0 +1,6 @@
+1|man|남자
+1|pole|기둥
+1|branch|나뭇가지
+2|overkill|지나침
+1| apple|사과
+1| kiwi|키위

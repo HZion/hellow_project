@@ -18,7 +18,7 @@ public class CRUD implements ICRUDinterface {
         String word = s.nextLine();
         System.out.println("뜻 입력: ");
         String mean = s.nextLine();
-        return new Word(level, word, mean);
+        return new Word(0,level, word, mean);
     };
     public void addWord(){
         Word New = (Word)Creat();
@@ -34,6 +34,21 @@ public class CRUD implements ICRUDinterface {
         }
         System.out.println("----------------------------------");
     }
+    public ArrayList<Integer> viewList(String input){
+        ArrayList<Integer> idlist = new ArrayList<>();
+        int index = 0;
+        System.out.println("----------------------------------");
+        for(int i = 0; i < list.size(); i++){
+            String word = list.get(i).getWord();
+            if(!word.contains(input)) continue;
+
+            System.out.print(index+1 + " ");
+            System.out.println(list.get(i).toString());
+            idlist.add(i);
+            index++;
+        }
+        return idlist;
+    }
     public int update(Object obj){
         return 0;
     };
@@ -44,13 +59,14 @@ public class CRUD implements ICRUDinterface {
 
     };
 
-    public void readFile() {
+    public void loadFile() {
         try {
             BufferedReader br = new BufferedReader(new FileReader(fname));
             String line;
             int count =0;
             while(true){
                 line = br.readLine();
+
                 if(line == null) break;
                 // 다 읽어 오면 break;
 
@@ -58,9 +74,9 @@ public class CRUD implements ICRUDinterface {
                 //읽어온 한줄을 | 기준으로 구분 data[0] = 레벨, data[1] = 단어, data[2]= 의미가 들어갈것임
                 int level = Integer.parseInt(data[0]);
                 String word = data[1];
-                String meaning = data[0];
-                list.add(new Word(0,level, word, meaning));
-                count++
+                String meaning = data[2];
+                list.add(new Word(0, level, word, meaning));
+                count++;
 
              }
             System.out.println("=> " + count+ "개 단어 로딩 완료" );
@@ -70,4 +86,40 @@ public class CRUD implements ICRUDinterface {
         }
     }
 
+    public void saveFile() {
+        try {
+            PrintWriter pr = new PrintWriter(new FileWriter(fname));
+            for(Word one: list){
+
+                pr.write(one.toFilewriteString() + "\n");
+            }
+            pr.close();
+            System.out.println("저장완료");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+
+    public void updateWord() {
+        System.out.print("=> 수정할 단어검색:");
+        String input = s.next();
+        ArrayList<Integer> idlist = this.viewList(input); // 검색할 단어가 포함된 위치 저장 및 출력
+
+        System.out.print("=> 수정할 번호 입력");
+        int id = s.nextInt();
+        s.nextLine();
+
+        System.out.print("=> 뜻입력");
+        String updateMeaning = s.nextLine();
+
+        Word word = list.get(idlist.get(id-1));
+
+        // word.setMeaning(updateMeaning); 이부분 이해가 잘안감
+        System.out.println("단어가 변경 되었습니다.");
+
+
+
+    }
 }

@@ -54,5 +54,7 @@ public class Word {
         this.word = word;
     }
 
-
+    public String toFilewriteString (){
+        return this.level + "|" + this.word + "|" + this.meaning;
+    }
 }
