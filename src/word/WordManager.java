@@ -22,23 +22,23 @@ public class WordManager {
             }
 
             if(menu == 1){
-                //list
+                //listprint
                 crud.viewList();
             }else if(menu == 2){
-
+                crud.levelWord();
             }
             else if(menu ==3 ){
-
+                crud.serachWord();
             }
             else if (menu == 4){
-                // add
+                // addword
                 crud.addWord();
             }
             else if(menu == 5){
                 crud.updateWord();
             }
             else if(menu == 6){
-
+                crud.deleteWord();
             }
             else if(menu == 7){
                 crud.saveFile();
