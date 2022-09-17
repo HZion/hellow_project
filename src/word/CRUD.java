@@ -162,9 +162,13 @@ public class CRUD implements ICRUDinterface {
     public void levelWord() {
         System.out.print("=>레벨을 고르세요(1~3)");
         int inputlevel = s.nextInt();
-
+        viewList(inputlevel);
     }
 
     public void serachWord() {
+        System.out.print("=>찾고자하는 단어를 입력하세요");
+        String inputWord = s.next();
+        viewList(inputWord);
+
     }
 }
