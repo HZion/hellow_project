@@ -21,6 +21,9 @@
 <br>
 <img src ="https://github.com/HZion/hellow_project/blob/master/sceeanshot/%EB%8B%A8%EC%96%B4%20%EC%A0%80%EC%9E%A5.png?raw=true" width ='300'>
 <br>
+#저장후 파일 내역
+<img src = "https://github.com/HZion/hellow_project/blob/master/sceeanshot/%EB%8B%A8%EC%96%B4%EB%AA%A9%EB%A1%9D.png?raw=true" width = '300'>
+<br>
 <img src ="https://github.com/HZion/hellow_project/blob/master/sceeanshot/%EB%AA%A8%EB%93%A0%EB%8B%A8%EC%96%B4%EB%B3%B4%EA%B8%B0.png?raw=true" width ='300'>
 <br>
 <img src ="https://github.com/HZion/hellow_project/blob/master/sceeanshot/%EC%88%98%EC%A4%80%EB%B3%84%20%EB%8B%A8%EC%97%85%EA%B4%B4.png?raw=true" width ='300'>
